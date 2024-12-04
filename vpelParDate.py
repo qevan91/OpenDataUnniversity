@@ -4,7 +4,6 @@ import seaborn as sns
 
 data = pd.read_csv('voitures-par-commune-par-energie.csv',on_bad_lines='skip', sep=';', quotechar='"', engine='python')
 
-
 print(data.dtypes)
 
 data['DATE_ARRETE'] = pd.to_datetime(data['DATE_ARRETE'])
@@ -18,4 +17,5 @@ plt.xlabel('Date')
 plt.ylabel('Nombre de Véhicules Rechargeables Électriques')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.show() 
+plt.savefig('parDate.png')
+plt.show()
