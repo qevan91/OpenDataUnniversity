@@ -2,9 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path = 'C:/Users/quiat/Downloads/voitures-par-commune-par-energie.csv'
+data = pd.read_csv('voitures-par-commune-par-energie.csv')
 
-data = pd.read_csv(file_path, sep=';', on_bad_lines='skip', low_memory=False)
 
 print(data.dtypes)
 
@@ -19,4 +18,4 @@ plt.xlabel('Date')
 plt.ylabel('Nombre de Véhicules Rechargeables Électriques')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.show()
+plt.show() 
