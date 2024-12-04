@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Charger les données
-data = pd.read_csv('consolidation-etalab-schema-irve-statique-v-2.3.1-20241204.csv', on_bad_lines='skip', sep=';', quotechar='"', engine='python')
+data = pd.read_csv('consolidation-etalab-schema.csv', on_bad_lines='skip', sep=',', quotechar='"', engine='python')
+
 
 # Supprimer les duplicatas basés sur la colonne 'adresse_station'
 data_unique = data.drop_duplicates(subset='adresse_station')
@@ -20,4 +21,3 @@ plt.ylabel("Nombres de bornes")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-
