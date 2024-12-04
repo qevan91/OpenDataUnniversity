@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = pd.read_csv('voitures-par-commune-par-energie.csv')
+data = pd.read_csv('voitures-par-commune-par-energie.csv',on_bad_lines='skip', sep=';', quotechar='"', engine='python')
 
 data['DATE_ARRETE'] = pd.to_datetime(data['DATE_ARRETE'])
 
